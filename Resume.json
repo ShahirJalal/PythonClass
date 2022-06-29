@@ -1,0 +1,22 @@
+{
+    "resume":   {"Personal_Info": 
+                    {
+                     "Name": "Muhammad Shahir Bin Jalal Hazli",
+                     "Location": "Kuala Lumpur, Malaysia",
+                     "Phone_Number": "013-3879365",
+                     "Email": "shahirjalalhazli@gmail.com",
+                     "Portfolio": "github.com/ShahirJalal"
+                    },
+                "Educations":
+                    {
+                     "Instituition": {"Universiti Teknologi PETRONAS":
+                        {
+                            "Course": "Bachelor of Science (Honours) Applied Physics",
+                            "Relevant_Coursework": "Electromagnetism, Quantum Mechanics, Optics, Vibration and Waves, Atomic Physics, Solid State Physics, Semiconductor and Devices Technology",
+                            "Award": "Silver Medal in Science & Engineering Design Exhibition 2018, Gold Medal in Science & Engineering Design Exhibition 2019"
+                        }
+                    },
+                    
+
+                }
+}
