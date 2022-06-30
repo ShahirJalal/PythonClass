@@ -6,8 +6,8 @@ waktu_solat_api = "https://waktu-solat-api.herokuapp.com/api/v1/prayer_times.jso
 response = requests.get(waktu_solat_api)
 data = response.json()
 
-for maklumat in data['data']['negeri'][0]['zon'][0]['waktu_solat']:
-    print(maklumat['time'])
+# for maklumat in data['data']['negeri'][0]['zon'][0]['waktu_solat']:
+#     print(maklumat['time'])
 
 def grab_api():
     waktu_solat_api = "https://waktu-solat-api.herokuapp.com/api/v1/prayer_times.json"
@@ -24,6 +24,17 @@ def filter_results():
 
 def get_input(nama, waktu):
     nama = sys.argv[1]
-    waktu = sys.argv[2]
+    return str(nama)
+
+def main():
+    try:
+        grab_api(data)
+        nama = get_input()
+        filter_results(nama)
+    
+    except Exception as e:
+        print("Tak jadi bro")
+
+main()
 
 # Siapkan
