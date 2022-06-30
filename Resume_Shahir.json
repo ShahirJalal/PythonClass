@@ -7,7 +7,7 @@
         {"Portfolio": "github.com/ShahirJalal"}
     ],
 
-    "Educations": [
+    "Educations":[{"Instituition_1" : "", "Instituition_2"}] [
         {"Universiti Teknologi PETRONAS": [
                     {"Course": "Bachelor of Science (Honours) Applied Physics"}, 
                     {"Relevant_Coursework": [
