@@ -25,3 +25,5 @@ def filter_results():
 def get_input(nama, waktu):
     nama = sys.argv[1]
     waktu = sys.argv[2]
+
+# Siapkan
