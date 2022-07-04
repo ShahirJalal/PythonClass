@@ -83,32 +83,18 @@ zon_input = 'mersing'
 #     pukul_berapa = maklumat['time']
 #     if maklumat['name'] == input_nama:
 #         print(maklumat['name'], maklumat['time'])
-# def get_input():
-#     input_nama_negeri = input("negeri: ")
-#     input_nama_zon = input("daerah: ")
-#     input_nama = input("waktu: ")
-#     return input_nama_negeri, input_nama_zon, input_nama
-
 def get_input():
     input_nama_negeri = input("negeri: ")
     input_nama_zon = input("daerah: ")
     input_nama = input("waktu: ")
     return input_nama_negeri, input_nama_zon, input_nama
 
-input_nama_negeri = 'johor'
-input_nama_zon = 'pulau aur'
-input_nama = 'zohor'
-
-#-------------------------------------------------------------------------------
-
-
-for maklumat in data['data']['negeri']:
-    nama = maklumat['nama']
-    zon = maklumat['zon']
-    if maklumat['nama'] == input_nama_negeri:
-        print(nama, zon)
-
-#-------------------------------------------------------------------------------
+def First_Filter(input_nama_negeri):
+    for maklumat in data['data']['negeri']:
+        nama = maklumat['nama']
+        zon = maklumat['zon']
+        if maklumat['nama'] == input_nama_negeri:
+            print(nama, zon)
 
 def Second_Filter(input_nama_zon):
     for maklumat in data['data']['negeri'][0]['zon']:
@@ -126,20 +112,7 @@ def Final_Filter(input_nama):
 
 #-------------------------------------------------------------------------------
 
-def First_Filter(input_nama_negeri):
-    for maklumat in data['data']['negeri']:
-        nama = maklumat['nama']
-        zon = maklumat['zon']
-        if maklumat['nama'] == input_nama_negeri:
-            for maklumat in data['data']['negeri'][0]['zon']:
-                nama = maklumat['nama']
-                waktu = maklumat['waktu_solat']
-                if maklumat['nama'] == input_nama_zon:
-                    for maklumat in data['data']['negeri'][0]['zon'][0]['waktu_solat']:
-                        nama = maklumat['name']
-                        waktu = maklumat['time']
-                        if maklumat['name'] == input_nama:
-                            print(f'Waktu {nama} adalah pada pukul {waktu}')
+
 
 #-------------------------------------------------------------------------------
 

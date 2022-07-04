@@ -1,0 +1,20 @@
+{
+    "data": {
+        "negeri": [
+            {
+                "nama": "johor",
+                "zon": [
+                    {
+                        "nama": "pulau aur",
+                        "waktu_solat": [
+                            {
+                                "name": "imsak",
+                                "time": "5:33"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
