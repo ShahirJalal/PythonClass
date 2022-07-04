@@ -17,7 +17,7 @@ data = response.json()
 #     print(maklumat['name])
 
 for maklumat in data['data']['negeri']:
-    print(maklumat['kelantan'])
+    print(maklumat['zon'])
 
 # def grab_api():
 #     waktu_solat_api = "https://waktu-solat-api.herokuapp.com/api/v1/prayer_times.json"
