@@ -89,11 +89,11 @@ zon_input = 'mersing'
 #     input_nama = input("waktu: ")
 #     return input_nama_negeri, input_nama_zon, input_nama
 
-def get_input():
-    input_nama_negeri = input("negeri: ")
-    input_nama_zon = input("daerah: ")
-    input_nama = input("waktu: ")
-    return input_nama_negeri, input_nama_zon, input_nama
+# def get_input():
+#     input_nama_negeri = input("negeri: ")
+#     input_nama_zon = input("daerah: ")
+#     input_nama = input("waktu: ")
+#     return input_nama_negeri, input_nama_zon, input_nama
 
 input_nama_negeri = 'johor'
 input_nama_zon = 'pulau aur'
@@ -101,50 +101,71 @@ input_nama = 'zohor'
 
 #-------------------------------------------------------------------------------
 
-
-for maklumat in data['data']['negeri']:
-    nama = maklumat['nama']
-    zon = maklumat['zon']
-    if maklumat['nama'] == input_nama_negeri:
-        print(nama, zon)
-
-#-------------------------------------------------------------------------------
-
-def Second_Filter(input_nama_zon):
-    for maklumat in data['data']['negeri'][0]['zon']:
-        nama = maklumat['nama']
-        waktu = maklumat['waktu_solat']
-        if maklumat['nama'] == input_nama_zon:
-            print(nama, waktu)
-
-def Final_Filter(input_nama):
-    for maklumat in data['data']['negeri'][0]['zon'][0]['waktu_solat']:
-        nama = maklumat['name']
-        waktu = maklumat['time']
-        if maklumat['name'] == input_nama:
-            print(f'Waktu {nama} adalah pada pukul {waktu}')
-
-#-------------------------------------------------------------------------------
-
-def First_Filter(input_nama_negeri):
+def First_Filter(input_nama_negeri, input_nama_zon, input_nama):
     for maklumat in data['data']['negeri']:
-        nama = maklumat['nama']
+        nama_negeri = maklumat['nama']
         zon = maklumat['zon']
-        if maklumat['nama'] == input_nama_negeri:
-            for maklumat in data['data']['negeri'][0]['zon']:
-                nama = maklumat['nama']
-                waktu = maklumat['waktu_solat']
-                if maklumat['nama'] == input_nama_zon:
-                    for maklumat in data['data']['negeri'][0]['zon'][0]['waktu_solat']:
-                        nama = maklumat['name']
-                        waktu = maklumat['time']
+        for maklumat in data['data'][nama_negeri][zon]:
+            nama_zon = maklumat['nama']
+            waktu = maklumat['waktu_solat']
+            for maklumat in data['data']['negeri'][0]['zon'][0]['waktu_solat']:
+                nama = maklumat['name']
+                waktu = maklumat['time']
+                if maklumat['nama'] == input_nama_negeri:
+                    return(nama_negeri, zon)
+                    if maklumat['nama'] == input_nama_zon:
+                        return(nama_zon, waktu)
                         if maklumat['name'] == input_nama:
                             print(f'Waktu {nama} adalah pada pukul {waktu}')
+                        else:
+                            print(nama_zon, waktu)
+                    else:
+                        print(nama_negeri, zon)
+                else:
+                    print()
+
 
 #-------------------------------------------------------------------------------
 
-input_nama_negeri, input_nama_zon, input_nama = get_input()
-Final_Filter(input_nama)
+def Second_Filter(input_nama_zon, nama_negeri, zon):
+    for maklumat in data['data'][nama_negeri][zon]:
+        nama_zon = maklumat['nama']
+        waktu = maklumat['waktu_solat']
+        if maklumat['nama'] == input_nama_zon:
+            print(nama_zon, waktu)
+            return(nama_zon, waktu)
+
+nama_negeri, zon = First_Filter(input_nama_negeri)
+Second_Filter(input_nama_zon, nama_negeri, zon)
+
+# def Final_Filter(input_nama):
+#     for maklumat in data['data']['negeri'][0]['zon'][0]['waktu_solat']:
+#         nama = maklumat['name']
+#         waktu = maklumat['time']
+#         if maklumat['name'] == input_nama:
+#             print(f'Waktu {nama} adalah pada pukul {waktu}')
+
+#-------------------------------------------------------------------------------
+
+# def First_Filter(input_nama_negeri):
+#     for maklumat in data['data']['negeri']:
+#         nama = maklumat['nama']
+#         zon = maklumat['zon']
+#         if maklumat['nama'] == input_nama_negeri:
+#             for maklumat in data['data']['negeri'][0]['zon']:
+#                 nama = maklumat['nama']
+#                 waktu = maklumat['waktu_solat']
+#                 if maklumat['nama'] == input_nama_zon:
+#                     for maklumat in data['data']['negeri'][0]['zon'][0]['waktu_solat']:
+#                         nama = maklumat['name']
+#                         waktu = maklumat['time']
+#                         if maklumat['name'] == input_nama:
+#                             print(f'Waktu {nama} adalah pada pukul {waktu}')
+
+#-------------------------------------------------------------------------------
+
+# input_nama_negeri, input_nama_zon, input_nama = get_input()
+# Final_Filter(input_nama)
 
 #------------------------------------------------------------------------
 # def grab_api():
