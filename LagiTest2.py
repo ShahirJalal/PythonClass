@@ -9,10 +9,14 @@ data = response.json()
 #     for negeri in info['negeri']:
 #         print(negeri)
 
-for key in data.keys():
-    for item in data['data']:
-        for item in data[0]:
-            print(item)
+# for key in data.keys():
+#     if key == 'data':
+#         # print(key)
+#         for item in key['data']:
+#             if item == 'negeri':
+#                 print(item)
+
+print(data['data']['negeri'][0]['zon'][0]['waktu_solat']['name','time'])
 
 # for key in data.keys():
 #     for item in data['data']:
