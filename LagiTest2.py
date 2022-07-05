@@ -1,8 +1,7 @@
-import requests
-
+import request
 
 waktu_solat_api = "https://waktu-solat-api.herokuapp.com/api/v1/prayer_times.json"
-response = requests.get(waktu_solat_api)
+response = request.get(waktu_solat_api)
 data = response.json()
 
 # for info in data['data']:
