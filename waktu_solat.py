@@ -1,9 +1,9 @@
-import requests
 import sys
+from urllib import request
 
 waktu_solat_api = "https://waktu-solat-api.herokuapp.com/api/v1/prayer_times.json"
 
-response = requests.get(waktu_solat_api)
+response = request.get(waktu_solat_api)
 data = response.json()
 
 # for maklumat in data['data']['negeri'][0]['zon'][0]['waktu_solat']:
@@ -11,7 +11,7 @@ data = response.json()
 
 def grab_api():
     waktu_solat_api = "https://waktu-solat-api.herokuapp.com/api/v1/prayer_times.json"
-    response = requests.get(waktu_solat_api)
+    response = request.get(waktu_solat_api)
     data = response.json()
     return data
 
