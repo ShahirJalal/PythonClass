@@ -9,16 +9,17 @@ data = response.json()
 #     for negeri in info['negeri']:
 #         print(negeri)
 
-student = {'name': 'john', 'age': 25, 'courses': ['Math', 'Physics']}
+for key in data.keys():
+    for item in data['data']:
+        for item in data[0]:
+            print(item)
 
-# for data in student:
-#     print(data)
+# for key in data.keys():
+#     for item in data['data']:
+#         print(data)
 
-for data in student:
-    for courses in data['courses']:
-        i = 1
-        i + 1
-        while i <= len(data['courses']):
-            print(courses)
-
-# print(student['courses'][0])
+# for key in mydict.keys():
+#     if key == 'cheese':
+#         for item in mydict['cheese']:
+#             if item == 'swiss':
+#                 print(item)
