@@ -41,6 +41,9 @@ waktu_solat= [
 #     if student_list[name] == True:
 #         print(name)
 
-for name in waktu_solat:
-    if waktu_solat[name] == 'subuh':
-        print(name)
+for waktu in waktu_solat:
+    for name in waktu:
+        nama = name['name']
+        waktu = name['waktu']
+        if name['name'] == "subuh":
+            print(f'waktu {nama} adalah pada {waktu}')
