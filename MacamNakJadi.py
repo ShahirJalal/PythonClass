@@ -16,12 +16,12 @@ data = response.json()
 #             if item == 'negeri':
 #                 print(item)
 
-negeri = 13
-zon = 2
-nama_waktu_solat = 6
+# negeri = 13
+# zon = 2
+# nama_waktu_solat = 6
 
 input_negeri = 'wilayah persekutuan'
-input_zon    = 'kuala lumpur'
+input_zon    = 'labuan'
 input_waktu  = 'subuh'
 
 # print(data['data']['negeri'][negeri]['zon'][zon]['waktu_solat'][waktu_solat])
@@ -30,19 +30,15 @@ for arkib in data['data']['negeri']:
     neme = arkib['nama']
     daerah = arkib['zon']
     if neme == input_negeri:
-        print(arkib)
-
-for info in data['data']['negeri'][negeri]['zon']:
-    nama = info['nama']
-    waktu_solat = info['waktu_solat']
-    if nama == input_zon:
-        print(info)
-
-for maklumat in data['data']['negeri'][negeri]['zon'][zon]['waktu_solat']:
-    name = maklumat['name']
-    time = maklumat['time']
-    if name == input_waktu:
-        print(maklumat)
+        for info in arkib['zon']:
+            nama = info['nama']
+            waktu_solat = info['waktu_solat']
+            if nama == input_zon:
+                for maklumat in info['waktu_solat']:
+                    name = maklumat['name']
+                    time = maklumat['time']
+                    if name == input_waktu:
+                        print(maklumat)
 
 # for key in data.keys():
 #     for item in data['data']:
