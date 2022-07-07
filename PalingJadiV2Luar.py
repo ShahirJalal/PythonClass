@@ -5,9 +5,23 @@ waktu_solat_api = "https://waktu-solat-api.herokuapp.com/api/v1/prayer_times.jso
 response = requests.get(waktu_solat_api)
 data = response.json()
 
-input_negeri = sys.argv[1]
-input_zon    = sys.argv[2]
-input_waktu  = sys.argv[3]
+
+if len(sys.argv) == 4:
+    input_negeri = sys.argv[1]
+    input_zon    = sys.argv[2]
+    input_waktu  = sys.argv[3]
+elif len(sys.argv) == 3:
+    input_negeri = sys.argv[1]
+    input_zon    = sys.argv[2]
+    input_waktu  = ''
+elif len(sys.argv) == 2:
+    input_negeri = sys.argv[1]
+    input_zon    = ''
+    input_waktu  = ''
+elif len(sys.argv) == 1:
+    input_negeri = ''
+    input_zon    = ''
+    input_waktu  = ''
 
 # def test():
 for arkib in data['data']['negeri']:
