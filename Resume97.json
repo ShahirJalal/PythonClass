@@ -120,10 +120,10 @@
     
     "References": 
         {"Name": Dr Mohamed Shuaib Mohamed Saheed",
-                {"Position": "Senior Lecturer"}, 
-                {"Location": "Fundamental and Applied Science Department, Universiti Teknologi PETRONAS"}, 
-                {"Phone_Number": "+605 - 368 7653"}, 
-                {"Email": "shuaib.saheed@utp.edu.my"}
+         "Position": "Senior Lecturer"}, 
+         "Location": "Fundamental and Applied Science Department, Universiti Teknologi PETRONAS", 
+         "Phone_Number": "+605 - 368 7653", 
+         "Email": "shuaib.saheed@utp.edu.my"}
             }, 
             {"Dr Balbir Singh Mahinder Singh": [
                 {"Position": "Associate Professor"}, 
